@@ -32,7 +32,7 @@ Note:
   | php-apache | localhost:80 |
   | phpMyAdmin | localhost:8080 |
 
-### **How to setup Laravel**
+### How to setup Laravel
 
 1.  Go to `src` directory:
 
@@ -61,7 +61,7 @@ Note:
 
     - If an error about view not found displays, run `composer dump-autoload` and refresh website
 
-### **Enable queue database**
+### Enable queue database
 
 - You should use queue when you test sending email. The environment variable should be set in `.env` like below:
 
@@ -73,7 +73,7 @@ Note:
 
   - "**database**" use queue in database and "**sync**" doesn't use queue
 
-### **How to use minio**
+### How to use minio
 
 - When `docker-compose up` command is ran, minio creates bucket "**public-bucket**" and "**private-bucket**". Set read:write permission to both buckets
 - Update `.env` file with contents below:
