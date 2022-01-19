@@ -8,7 +8,7 @@
 
 ## Development Setup
 
-### **How to setup docker environment**
+### How to setup docker environment
 
 1.  Go to `docker` directory
 
