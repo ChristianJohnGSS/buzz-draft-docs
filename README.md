@@ -36,7 +36,7 @@ Note:
 
 1.  Go to `src` directory:
 
-    1. Copy `.env.example` to `.env` and update contents
+    1. Copy `.env.example` to `.env` and update contents, or paste provided `.env` file
 
     2. Run following commands:
 
@@ -60,6 +60,7 @@ Note:
       2. If doing any batch (src/app/Console/Commands) related tasks
 
     - If an error about view not found displays, run `composer dump-autoload` and refresh website
+    - After database migration, import SQL dump for required data (will be provided).
 
 ### Enable queue database
 
