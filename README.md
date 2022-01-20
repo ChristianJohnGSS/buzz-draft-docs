@@ -79,7 +79,7 @@
 
 ### 3. How to use MinIO
 
-- For more information what is MinIO, click this [link](https://min.io/).
+- For more information about MinIO, click this [link](https://min.io/).
 
 1. When `docker-compose up` command is ran:
 
@@ -121,8 +121,20 @@
 
 ### 5. Buzzlink admin
 
-- For more information about the packaged used for Buzzlink admin, click this [link](https://laravel-admin.org/docs/en/).
+- For more information about the packaged used for `Buzzlink admin,` click this [link](https://laravel-admin.org/docs/en/).
 - You can access Buzzlink admin by using `localhost:80/admin` with the following login information below:
 
   - User ID: `admin`
   - Password: `admin`
+
+- Make sure to have the environment variable below in `.env` file with correct value based on environnment (to properly load website and its assets)
+
+  ```
+  // Remote server, staging and production environment
+  ADMIN_HTTPS=true
+
+  // Local environment
+  ADMIN_HTTPS=false
+  ```
+
+### 6. Environment variables
