@@ -71,35 +71,37 @@
   3. After database migration, import SQL dump for required data (will be provided).
   4. Try and access website again. Happy coding!
 
-### 3. How to use minio
+### 3. How to use MinIO
 
-- When `docker-compose up` command is ran, minio creates bucket "**public-bucket**" and "**private-bucket**". Set read:write permission to both buckets
-- Update `.env` file with contents below:
+- For more information what is MinIO, click this [link](https://min.io/).
 
-  ```
-  AWS_ACCESS_KEY_ID=minio
-  AWS_SECRET_ACCESS_KEY=minio123
-  AWS_DEFAULT_REGION=us-east-1
-  AWS_PUBLIC_BUCKET=public-file
-  AWS_PRIVATE_BUCKET=private-file
-  AWS_URL_LOCAL=http://localhost:9090
-  AWS_URL_DOCKER=http://minio:9000
+1. When `docker-compose up` command is ran:
 
-  AWS_LOCAL_PUBLIC_URL="${AWS_URL_LOCAL}/${AWS_PUBLIC_BUCKET}"
+   - MinIO creates bucket "**public-bucket**" and "**private-bucket**". Edit the policy of both buckets to `read and write` permission. You can do this by accessing MinIO browser on `localhost:9090` with the following information:
 
-  AWS_PUBLIC_URL="${AWS_URL_DOCKER}/${AWS_PUBLIC_BUCKET}"
-  AWS_PRIVATE_URL="${AWS_URL_DOCKER}/${AWS_PRIVATE_BUCKET}"
-  BUCKET_ENDPOINT=false
-  USE_PATH_STYLE_ENDPOINT=true
-  ```
+     - Access key: `minio`
+     - Secret key: `minio123`
 
-- Then execute `php artisan config:cache` command
-- You can access minio landing page using `localhost:9090` with:
+2. To use MinIO in Laravel, just update `.env` file with contents below (but possible to be included in the provided `.env` for convenience):
 
-  - ID: minio
-  - KEY: minio123
+   ```
+   AWS_ACCESS_KEY_ID=minio
+   AWS_SECRET_ACCESS_KEY=minio123
+   AWS_DEFAULT_REGION=us-east-1
+   AWS_PUBLIC_BUCKET=public-file
+   AWS_PRIVATE_BUCKET=private-file
+   AWS_URL_LOCAL=http://localhost:9090
+   AWS_URL_DOCKER=http://minio:9000
 
-### Enable queue database
+   AWS_LOCAL_PUBLIC_URL="${AWS_URL_LOCAL}/${AWS_PUBLIC_BUCKET}"
+
+   AWS_PUBLIC_URL="${AWS_URL_DOCKER}/${AWS_PUBLIC_BUCKET}"
+   AWS_PRIVATE_URL="${AWS_URL_DOCKER}/${AWS_PRIVATE_BUCKET}"
+   BUCKET_ENDPOINT=false
+   USE_PATH_STYLE_ENDPOINT=true
+   ```
+
+### 4. Enable queue database
 
 - You should use queue when you test sending email. The environment variable should be set in `.env` like below:
 
