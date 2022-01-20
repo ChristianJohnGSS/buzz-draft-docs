@@ -121,7 +121,7 @@
 
 ### 5. Buzzlink admin
 
-- For more information about the packaged used for `Buzzlink admin,` click this [link](https://laravel-admin.org/docs/en/).
+- For more information about the packaged used for `Buzzlink admin`, click this [link](https://laravel-admin.org/docs/en/).
 - You can access Buzzlink admin by using `localhost:80/admin` with the following login information below:
 
   - User ID: `admin`
