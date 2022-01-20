@@ -68,7 +68,13 @@
 
      - If an error about view not found displays, run `composer dump-autoload` and refresh website
 
-  3. After database migration, import SQL dump for required data (will be provided).
+  3. After database migration, import SQL dump (will be provided) for required initial data.
+     1. For importing SQL dump, open `phpMyAdmin` using `localhost:8080`
+     2. Click `buzzlink` database found in left sidebar
+     3. Click `Import` on tab options on top
+     4. On `Import` tab, click button `Choose File`
+     5. Select SQL dump by double clicking the file or selecting the file then clicking button `Open` found in bottom right of screen
+     6. Lastly, click button `Go` below at bottom right of screen
   4. Try and access website again. Happy coding!
 
 ### 3. How to use MinIO
