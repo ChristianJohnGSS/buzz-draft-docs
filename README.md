@@ -43,7 +43,7 @@
 
 - On project directory, go to `src` folder:
 
-  1. Copy `.env.example` to `.env` and update contents, or paste provided `.env` file
+  1. Copy `.env.example` to `.env` and update contents, or paste [provided](#other-information) `.env` file
 
   2. Then run following commands:
 
@@ -68,7 +68,7 @@
 
      - If an error about view not found displays, run `composer dump-autoload` and refresh website
 
-  3. After database migration, import SQL dump (will be provided) for required initial data.
+  3. After database migration, import SQL dump (will be [provided](#other-information)) for required initial data.
      1. For importing SQL dump, open `phpMyAdmin` using `localhost:8080`
      2. Click `buzzlink` database found in left sidebar
      3. Click `Import` on tab options on top
@@ -88,7 +88,7 @@
      - Access key: `minio`
      - Secret key: `minio123`
 
-2. To use MinIO in Laravel, just update `.env` file with contents below (but possible to be included in the provided `.env` for convenience):
+2. To use MinIO in Laravel, just update `.env` file with contents below (but possible to be included in the [provided](#other-information) `.env` for convenience):
 
    ```
    AWS_ACCESS_KEY_ID=minio
@@ -139,7 +139,7 @@
 
 ### 6. Additional environment variables
 
-- Environment variables listed below is included in the provided `.env` file
+- Environment variables listed below is included in the [provided](#other-information) `.env` file
   | ENVIRONMENT VARIABLE | CONTENT |
   | -------------------- | ------------ |
   | BANK_CODE_JP_API_KEY | For accessing API from `https://bankcode-jp.com/` <br /> API link: `https://apis.bankcode-jp.com/`|
