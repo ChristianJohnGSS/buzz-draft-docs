@@ -1,80 +1,77 @@
 # BUZZLINK
 
-## Prerequisites
+## 1. Prerequisites
 
-- Node.js
-- Composer
-- Docker
+- Make sure to have the following tools installed on your machine before continuing:
 
-## Development Setup
+  - Node.js
+  - Composer
+  - Docker
 
-### How to setup docker environment
+## 2. Development Setup
 
-1.  Go to `docker` directory
+- Follow the instructions below after cloning the repository.
 
-```
-> cd  ./docker
-```
+### 1. How to setup docker environment
 
-2.  Start up docker containers
-
-```
-> docker-compose up -d
-```
-
-Note:
-
-- At this time, schemaspy generates Database Scheme (found in `./docker/schemaspy/output`) from buzzlink database. If you want to regenerate schemaspy, excute `docker-compose up` again
-
-- **Access ports**
-  | PLATFORM | PORT |
-  |------------|----------------|
-  | php-apache | localhost:80 |
-  | phpMyAdmin | localhost:8080 |
-
-### How to setup Laravel
-
-1.  Go to `src` directory:
-
-    1. Copy `.env.example` to `.env` and update contents, or paste provided `.env` file
-
-    2. Run following commands:
+1.  On project directory, go to `docker` folder
 
     ```
-    // For installing dependencies
-    > npm install
-    > composer install
+    cd  ./docker
+    ```
 
-    // For database migrations
-    > php artisan migrate
+2.  Run command below to start up docker containers (_make sure docker is running before executing the command_)
 
-    // For compiling assets and hot-reload for development
-    > npm run watch
+    ```
+    docker-compose up -d
     ```
 
     Note:
 
-    - On `.env` file, change `DB_HOST` from `mysql` to `127.0.0.1` for the following scenarios (then revert back to `mysql` if done and accessing website again):
+    - At this time, schemaspy generates Database Scheme (found in `./docker/schemaspy/output`) from buzzlink database. If you want to regenerate schemaspy, excute `docker-compose up` again
 
-      1. If an error displays about "**No such hosts is known**" after running `php artisan migrate` command.
-      2. If doing any batch (src/app/Console/Commands) related tasks
+3.  After all app containers are created successfully. You can try and access the following platforms below:
 
-    - If an error about view not found displays, run `composer dump-autoload` and refresh website
-    - After database migration, import SQL dump for required data (will be provided).
+    | PLATFORM   | PORT           |
+    | ---------- | -------------- |
+    | php-apache | localhost:80   |
+    | phpMyAdmin | localhost:8080 |
 
-### Enable queue database
+### 2. How to setup Laravel
 
-- You should use queue when you test sending email. The environment variable should be set in `.env` like below:
+- If you have accessed `php-apache` using `localhost:80` and an error about "**No such file or directory**" is displayed, follow instructions below:
 
-  ```
-  QUEUE_CONNECTION=database
-  ```
+- On project directory, go to `src` folder:
 
-  Note:
+  1. Copy `.env.example` to `.env` and update contents, or paste provided `.env` file
 
-  - "**database**" use queue in database and "**sync**" doesn't use queue
+  2. Then run following commands:
 
-### How to use minio
+     ```
+     // For installing dependencies
+     npm install
+     composer install
+
+     // For database migrations
+     php artisan migrate
+
+     // For compiling assets and hot-reload for development
+     npm run watch
+     ```
+
+     Note:
+
+     - On `.env` file, change `DB_HOST` from `mysql` to `127.0.0.1` for the following scenarios (then revert back to `mysql` if done and accessing website again):
+
+       1. If an error displays about "**No such hosts is known**" after running `php artisan migrate` command.
+       2. If doing any batch (`src/app/Console/Commands`) related tasks
+
+     - If an error about view not found displays, run `composer dump-autoload` and refresh website
+
+  3. After database migration, import SQL dump for required data (will be provided).
+  4. Try and access website again. Happy coding!
+
+### 3. How to use minio
 
 - When `docker-compose up` command is ran, minio creates bucket "**public-bucket**" and "**private-bucket**". Set read:write permission to both buckets
 - Update `.env` file with contents below:
@@ -98,5 +95,18 @@ Note:
 
 - Then execute `php artisan config:cache` command
 - You can access minio landing page using `localhost:9090` with:
+
   - ID: minio
   - KEY: minio123
+
+### Enable queue database
+
+- You should use queue when you test sending email. The environment variable should be set in `.env` like below:
+
+  ```
+  QUEUE_CONNECTION=database
+  ```
+
+  Note:
+
+  - "**database**" use queue in database and "**sync**" doesn't use queue
