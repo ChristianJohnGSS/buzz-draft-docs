@@ -147,6 +147,6 @@
   | MIX_APP_STRIPE_API_KEY | Client-side key |
   | STRIPE_SECRET_KEY | Server-side key <br /> Package: [stripe/stripe-php](https://github.com/stripe/stripe-php)|
 
-### Other information
+## Other information
 
 - Click this [link](https://drive.google.com/drive/folders/1c7o4wt83gs83OCxfenilSOKmKslChm6J?usp=sharing) for the provided `.env` and SQL dump (filename: `buzzlink-dev.dump.sql`) file
