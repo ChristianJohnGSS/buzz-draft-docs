@@ -144,8 +144,8 @@
   | -------------------- | ------------ |
   | BANK_CODE_JP_API_KEY | For accessing API from `https://bankcode-jp.com/` <br /> API link: `https://apis.bankcode-jp.com/`|
   | SENDGRID_API_KEY | For mail sending using SendGrid |
-  | MIX_APP_STRIPE_API_KEY | Client-side key |
-  | STRIPE_SECRET_KEY | Server-side key <br /> Package: [stripe/stripe-php](https://github.com/stripe/stripe-php)|
+  | MIX_APP_STRIPE_API_KEY | Client-side key for Stripe |
+  | STRIPE_SECRET_KEY | Server-side key for Stripe <br /> Package: [stripe/stripe-php](https://github.com/stripe/stripe-php)|
 
 ## Other information
 
