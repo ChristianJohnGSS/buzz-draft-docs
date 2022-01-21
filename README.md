@@ -7,12 +7,25 @@
   - Node.js
   - Composer
   - Docker
+  - Git
 
 ## 2. Development Setup
 
-- Follow the instructions below after cloning the repository.
+### 1. Clone the project repository
 
-### 1. How to setup docker environment
+1. On Github repository, copy clone URL as shown below (can choose either from `HTTPS` OR `SSH` depending on your set up):
+![Github Clone URL](.github/images/clone-url.png)
+2. On bash or powershell, set your current directory first on your preferred workspace, directory or folder
+3. Run following command:
+  ```
+    git clone [url]
+    // or
+    git clone git@github.com:buzz-link/buzzlink.git
+  ```
+  Note:
+  - For more information about cloning arepository, click this [link](https://github.com/git-guides/git-clone).
+
+### 2. How to setup docker environment
 
 1.  On project directory, go to `docker` folder
 
@@ -37,7 +50,7 @@
     | php-apache | localhost:80   |
     | phpMyAdmin | localhost:8080 |
 
-### 2. How to setup Laravel
+### 3. How to setup Laravel
 
 - If you have accessed `php-apache` using `localhost:80` and an error about "**No such file or directory**" is displayed, follow instructions below:
 
@@ -77,7 +90,7 @@
      6. Lastly, click button `Go` below at bottom right of screen
   4. Try and access website again. Happy coding!
 
-### 3. How to use MinIO
+### 4. How to use MinIO
 
 - For more information about MinIO, click this [link](https://min.io/).
 
@@ -107,7 +120,7 @@
    USE_PATH_STYLE_ENDPOINT=true
    ```
 
-### 4. Enable queue database
+### 5. Enable queue database
 
 - You should use queue when you test sending email. The environment variable should be set in `.env` like below:
 
@@ -119,7 +132,7 @@
 
   - "**database**" use queue in database and "**sync**" doesn't use queue
 
-### 5. Buzzlink admin
+### 6. Buzzlink admin
 
 - For more information about the packaged used for `Buzzlink admin`, click this [link](https://laravel-admin.org/docs/en/).
 - You can access Buzzlink admin by using `localhost:80/admin` with the following login information below:
@@ -137,7 +150,7 @@
   ADMIN_HTTPS=false
   ```
 
-### 6. Additional environment variables
+### 7. Additional environment variables
 
 - Environment variables listed below is included in the [provided](#other-information) `.env` file
   | ENVIRONMENT VARIABLE | CONTENT |
@@ -149,4 +162,4 @@
 
 ## Other information
 
-- Click this [link](https://drive.google.com/drive/folders/1c7o4wt83gs83OCxfenilSOKmKslChm6J?usp=sharing) for the provided `.env` and SQL dump (filename: `buzzlink-dev.dump.sql`) file
+- Click this [link](https://drive.google.com/drive/u/0/folders/1mdOELWl_31cRqrhFpWP-zD2UJgJCzm3i) for the provided `.env` and SQL dump (filename: `buzzlink-dev.dump.sql`) file
