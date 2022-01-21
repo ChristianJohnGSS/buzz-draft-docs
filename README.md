@@ -14,7 +14,13 @@
 ### 1. Clone the project repository
 
 1. On Github repository, copy clone URL as shown below (can choose either from `HTTPS` OR `SSH` depending on your set up):
+
+<br />
+
 ![Github Clone URL](.github/images/clone-url.png)
+
+<br />
+
 2. On bash or powershell, set your current directory first on your preferred workspace, directory or folder
 3. Run following command:
   ```
